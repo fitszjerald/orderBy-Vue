@@ -12,6 +12,9 @@
         <div class="row">
             <div class="col-l-12">
                 <h2>Course Data</h2>
+                <form class="form-group">
+                    <input type="text" class="form-control" v-model="searchString">
+                </form>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
@@ -23,7 +26,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for='course in courses | orderBy sortKey reverse'>
+                            <tr v-for='course in courses | orderBy sortKey reverse | filterBy searchString in "title" '>
                                 <th>{{ $index + 1 }}</th>
                                 <td>{{ course.title }}</td>
                                 <td>{{ course.difficulty }}</td>
