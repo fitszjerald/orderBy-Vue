@@ -7,7 +7,36 @@
     <title>orderBy Vue</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>    
-  
+<body id="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-l-12">
+                <h2>Course Data</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Course name</th>
+                                <th>Difficulty</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for='course in courses'>
+                                <th>{{ $index + 1 }}</th>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.difficulty }}</td>
+                                <td>{{ course.time }}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
     <script src="script.js"></script>
 </body>
