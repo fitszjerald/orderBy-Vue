@@ -3,7 +3,8 @@ Vue.config.devtools = true;
 new Vue({
     el: "#app",
     data: {
-
+        sortKey : 'time',
+        reverse : -1,
         courses: [
             {
                 title: "Learn PHP",

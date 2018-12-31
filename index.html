@@ -17,13 +17,13 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Course name</th>
-                                <th>Difficulty</th>
-                                <th>Time</th>
+                                <th @click="sortBy('title')">Course name</th>
+                                <th @click="sortBy('difficulty')">Difficulty</th>
+                                <th @click="sortBy('time')">Time</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for='course in courses'>
+                            <tr v-for='course in courses | orderBy sortKey reverse'>
                                 <th>{{ $index + 1 }}</th>
                                 <td>{{ course.title }}</td>
                                 <td>{{ course.difficulty }}</td>
