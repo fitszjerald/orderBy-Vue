@@ -25,5 +25,11 @@ new Vue({
                 complete: false
             }
         ]
-    }
+    },
+    methods : {
+        sortBy : function(sortkey){
+            this.reverse *= (this.sortKey == sortkey)? -1 : 1;
+            this.sortKey = sortkey;
+        }
+    },
 })
